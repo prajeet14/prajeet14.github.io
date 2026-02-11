@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Meka Radhika - Psychologist & Homeopathic Physician</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b9e91;
+            --primary-dark: #5d6f63;
+            --primary-light: #b8c9bc;
+            --cream: #faf8f4;
+            --cream-dark: #f0ebe0;
+            --charcoal: #2d3436;
+            --text: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .contact-btn {
+            padding: 0.8rem 1.8rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(93, 111, 99, 0.7), rgba(93, 111, 99, 0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23b8c9bc" width="1200" height="800"/><circle cx="300" cy="200" r="150" fill="%238b9e91" opacity="0.3"/><circle cx="900" cy="600" r="200" fill="%235d6f63" opacity="0.2"/><circle cx="600" cy="400" r="180" fill="%23a8b9ac" opacity="0.25"/></svg>');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .intro-section img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            border: 8px solid var(--cream);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin: 0 auto 2rem;
+            border: 8px solid var(--cream);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-section p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-section .contact-btn {
+            margin-top: 1.5rem;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: var(--charcoal);
+            margin-bottom: 3rem;
+        }
+
+        .specialties-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .specialty-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .specialty-content {
+            padding: 2rem;
+        }
+
+        .specialty-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .specialty-content p {
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 0.8rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials-list {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .credentials-list h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .credentials-list ul {
+            list-style: none;
+        }
+
+        .credentials-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .credentials-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-section .hero-cta {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 2rem;
+            background: var(--cream);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-card p {
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .about-container,
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Dr. Meka Radhika</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#specialties">Specialties</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="contact-btn">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Compassionate Care for Mind & Body</h1>
+            <h2>Integrating Psychology & Homeopathy for Holistic Healing</h2>
+            <a href="#contact" class="hero-cta">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="doctor-placeholder">👩‍⚕️</div>
+        <p>
+            As a licensed clinical psychologist and homeopathic physician, I'm committed to supporting 
+            individuals and families through all seasons of life. With over 30 years of dedicated practice, 
+            I've had the privilege of guiding more than 300 clients toward lasting wellness.
+        </p>
+        <p>
+            Therapy and treatment with me is collaborative, culturally sensitive, strengths-based, and 
+            solution-focused so you feel supported and understood. I specialize in child psychology, 
+            parenting support, trauma recovery, and natural homeopathic healing.
+        </p>
+        <a href="#contact" class="contact-btn">Contact Me</a>
+    </section>
+
+    <!-- Specialties Section -->
+    <section id="specialties" class="specialties">
+        <h2 class="section-title">Specialties</h2>
+        <div class="specialties-grid">
+            <div class="specialty-card">
+                <div class="specialty-image">👶</div>
+                <div class="specialty-content">
+                    <h3>Child Therapy</h3>
+                    <p>Is your child anxious, easily frustrated, or struggling to cope with change? I provide specialized care for behavioral, emotional, and developmental challenges affecting your child's wellbeing and happiness.</p>
+                    <a href="#contact" class="read-more">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="specialty-card">
+                <div class="specialty-image">👨‍👩‍👧</div>
+                <div class="specialty-content">
+                    <h3>Parenting Counseling</h3>
+                    <p>Are you seeking support and guidance on how to best help your child navigate anxiety, challenging behaviors, or stress? I offer practical strategies for building healthy family dynamics.</p>
+                    <a href="#contact" class="read-more">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="specialty-card">
+                <div class="specialty-image">💔</div>
+                <div class="specialty-content">
+                    <h3>Divorce Counseling</h3>
+                    <p>Navigating separation? I provide compassionate guidance for individuals and families working through divorce, helping you heal and move forward with resilience and clarity.</p>
+                    <a href="#contact" class="read-more">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="specialty-card">
+                <div class="specialty-image">🛡️</div>
+                <div class="specialty-content">
+                    <h3>Trauma & Abuse Recovery</h3>
+                    <p>Has violence or abuse turned your world upside down? I create a safe therapeutic environment for survivors to process trauma, rebuild self-worth, and reclaim their lives.</p>
+                    <a href="#contact" class="read-more">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="specialty-card">
+                <div class="specialty-image">🌿</div>
+                <div class="specialty-content">
+                    <h3>Homeopathic Treatment</h3>
+                    <p>Living with a chronic medical condition? I offer natural, holistic healing through classical homeopathy, treating the whole person—mind, body, and spirit—with gentle, effective remedies.</p>
+                    <a href="#contact" class="read-more">Learn more →</a>
+                </div>
+            </div>
+
+            <div class="specialty-card">
+                <div class="specialty-image">🌱</div>
+                <div class="specialty-content">
+                    <h3>Personal Growth</h3>
+                    <p>Ready for transformation? I support individuals on their journey of self-discovery, building resilience, confidence, and a deeper understanding of themselves.</p>
+                    <a href="#contact" class="read-more">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">👩‍⚕️</div>
+            <div class="about-content">
+                <h2>Meet Dr. Meka Radhika</h2>
+                <p>
+                    For over three decades, I have dedicated my life to the healing arts, combining the profound 
+                    insights of psychology with the natural wisdom of homeopathy. This unique dual expertise allows 
+                    me to offer truly holistic care that addresses both mind and body.
+                </p>
+                <p>
+                    My approach is rooted in compassion, scientific evidence, and the understanding that true healing 
+                    encompasses physical, emotional, and spiritual wellbeing. Every person's journey is unique, and 
+                    I'm here to walk alongside you with patience, expertise, and genuine care.
+                </p>
+                <div class="credentials-list">
+                    <h3>Qualifications & Expertise</h3>
+                    <ul>
+                        <li>Clinical Psychologist - 30+ years of practice</li>
+                        <li>Certified Homeopathic Physician</li>
+                        <li>Specialist in Child & Family Therapy</li>
+                        <li>Trauma-Informed Care Practitioner</li>
+                        <li>Integrated Mind-Body Medicine Expert</li>
+                        <li>300+ Successful Patient Transformations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Let's Bring Balance & Harmony Back Into Your Life</h2>
+        <p>Taking the first step toward healing requires courage. I'm here to support you.</p>
+        <a href="#contact" class="hero-cta">Schedule Free Consultation</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:mekaradhika65@gmail.com">mekaradhika65@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🏥</div>
+                    <h3>Sessions</h3>
+                    <p>In-Person & Virtual Consultations</p>
+                    <p>Flexible Scheduling Available</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Serving clients locally and online</p>
+                    <p>Contact for details</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">Dr. Meka Radhika</div>
+                <p>Clinical Psychologist & Homeopathic Physician</p>
+                <p>Compassionate, evidence-based care for mind and body.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#specialties">Child Therapy</a>
+                <a href="#specialties">Parenting Counseling</a>
+                <a href="#specialties">Trauma Recovery</a>
+                <a href="#specialties">Homeopathic Treatment</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:mekaradhika65@gmail.com">Email Us</a>
+                <a href="#contact">Schedule Consultation</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dr. Meka Radhika | All consultations are strictly confidential</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.specialty-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
